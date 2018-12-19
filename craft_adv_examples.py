@@ -24,7 +24,7 @@ ATTACK_PARAMS = {
 # CLIP_MAX = 1.0
 CLIP_MIN = -0.5
 CLIP_MAX = 0.5
-PATH_DATA = "data/"
+PATH_DATA = "lid_adversarial_subspace_detection/data/"
 
 def craft_one_type(sess, model, X, Y, dataset, attack, batch_size):
     """
