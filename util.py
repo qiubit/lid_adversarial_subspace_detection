@@ -17,7 +17,7 @@ from keras.datasets import mnist, cifar10
 from keras.utils import np_utils
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
-from keras.layers import Conv2D, MaxPooling2D
+from keras.layers import Conv2D, MaxPooling2D, BatchNormalization
 from keras.regularizers import l2
 import tensorflow as tf
 from scipy.spatial.distance import pdist, cdist, squareform
