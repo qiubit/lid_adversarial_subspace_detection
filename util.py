@@ -403,7 +403,8 @@ def get_layer_wise_activations(model, dataset):
         "dataset parameter must be either 'mnist' 'cifar' or 'svhn'"
     if dataset == 'mnist':
         # mnist model
-        acts = [model.layers[0].input]
+        # acts = [model.layers[0].input]
+        acts = []
         acts.extend([layer.output for layer in model.layers])
     elif dataset == 'cifar':
         # cifar-10 model
