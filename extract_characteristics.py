@@ -340,7 +340,10 @@ def main(args):
 
         # save to file
         # file_name = os.path.join(PATH_DATA, 'lid_%s_%s.npy' % (args.dataset, args.attack))
-        file_name = os.path.join('../data_grid_search/lid_large_batch/', 'lid_%s_%s_%s.npy' %
+        if not os.path.exists('lid_adversarial_subspace_detection/data_grid_search/lid_large_batch/'):
+            os.makedirs('lid_adversarial_subspace_detection/data_grid_search/lid_large_batch/')
+
+        file_name = os.path.join('lid_adversarial_subspace_detection/data_grid_search/lid_large_batch/', 'lid_%s_%s_%s.npy' %
                                  (args.dataset, args.attack, args.k_nearest))
 
         data = np.concatenate((characteristics, labels), axis=1)
