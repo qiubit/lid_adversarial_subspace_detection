@@ -339,7 +339,6 @@ def main(args):
         print("LID: [characteristic shape: ", characteristics.shape, ", label shape: ", labels.shape)
 
         # save to file
-        # file_name = os.path.join(PATH_DATA, 'lid_%s_%s.npy' % (args.dataset, args.attack))
         if not os.path.exists('lid_adversarial_subspace_detection/data_grid_search/lid_large_batch/'):
             os.makedirs('lid_adversarial_subspace_detection/data_grid_search/lid_large_batch/')
 
@@ -348,6 +347,10 @@ def main(args):
 
         data = np.concatenate((characteristics, labels), axis=1)
         np.save(file_name, data)
+
+        # Also, save here
+        file_name2 = os.path.join(PATH_DATA, 'lid_%s_%s.npy' % (args.dataset, args.attack))
+        np.save(file_name2, data)
     elif args.characteristic == 'km':
         # extract k means distance
         characteristics, labels = get_kmeans(model, X_test, X_test_noisy, X_test_adv,
